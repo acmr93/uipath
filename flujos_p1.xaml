@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="flujos_p1" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,696" sap2010:WorkflowViewState.IdRef="flujos_p1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -53,7 +53,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">390,12.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">420,87.5 420,117.5 410,117.5 410,164.02</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">420,87.5 420,137.5</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -465,14 +465,14 @@
         <Switch x:TypeArguments="x:Object" DisplayName="Cambiar" sap:VirtualizedContainerService.HintSize="657,116" sap2010:WorkflowViewState.IdRef="Switch`1_1" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID16">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">310,164.02</av:Point>
+          <av:Point x:Key="ShapeLocation">0,354</av:Point>
           <av:Size x:Key="ShapeSize">200,52</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="Itinerario" sap:VirtualizedContainerService.HintSize="975,636" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+      <Flowchart DisplayName="Itinerario" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Flowchart_4">
         <Flowchart.Variables>
           <Variable x:TypeArguments="x:String" Name="res" />
           <Variable x:TypeArguments="x:String" Name="mensaje" />
@@ -655,6 +655,63 @@
         <x:Reference>__ReferenceID14</x:Reference>
         <x:Reference>__ReferenceID11</x:Reference>
       </Flowchart>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID16">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">320,137.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="esquema de practica" sap:VirtualizedContainerService.HintSize="304,860" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:GenericValue" Name="A" />
+          <Variable x:TypeArguments="ui:GenericValue" Name="B" />
+          <Variable x:TypeArguments="ui:GenericValue" Name="C" />
+          <Variable x:TypeArguments="ui:GenericValue" Name="D" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign.To>
+            <OutArgument x:TypeArguments="ui:GenericValue">[A]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="ui:GenericValue">["123"]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign.To>
+            <OutArgument x:TypeArguments="ui:GenericValue">[B]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="ui:GenericValue">["456"]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <Assign.To>
+            <OutArgument x:TypeArguments="ui:GenericValue">[C]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="ui:GenericValue">[123]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign.To>
+            <OutArgument x:TypeArguments="ui:GenericValue">[D]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="ui:GenericValue">[456]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[A+B]" />
+        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[C+D]" />
+        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[A+C]" />
+        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[C+A]" />
+      </Sequence>
     </FlowStep>
   </Flowchart>
 </Activity>
