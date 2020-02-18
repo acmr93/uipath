@@ -52,20 +52,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">260,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">290,77.5 290,107.5 410,107.5 410,246.04</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">290,77.5 290,107.5 320,107.5 320,147</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
     </Flowchart.StartNode>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">30,204.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:Point x:Key="ShapeLocation">0,4.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">100,55.5 100,105.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="flowcharleap" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart DisplayName="flowcharleap" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Flowchart_2">
         <Flowchart.Variables>
           <Variable x:TypeArguments="x:Int32" Default="2016" Name="anio" />
         </Flowchart.Variables>
@@ -159,11 +160,11 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">30,267</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:Point x:Key="ShapeLocation">0,67</av:Point>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Secuencia IF" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Secuencia IF" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Default="0" Name="anio2" />
         </Sequence.Variables>
@@ -172,11 +173,11 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <DoWhile DisplayName="Hacer mientras" sap:VirtualizedContainerService.HintSize="801,594" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+        <DoWhile DisplayName="Hacer mientras" sap:VirtualizedContainerService.HintSize="801,598" sap2010:WorkflowViewState.IdRef="DoWhile_1">
           <DoWhile.Condition>
             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="anio2 mod 4 &lt;&gt; 0" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
           </DoWhile.Condition>
-          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="755,432" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="755,434" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,7 +188,7 @@
                 <OutArgument x:TypeArguments="x:Int32">[anio2]</OutArgument>
               </ui:InputDialog.Result>
             </ui:InputDialog>
-            <If Condition="[anio2 mod 4 = 0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="713,208" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[anio2 mod 4 = 0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="713,210" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;es bisiesto secuencia&quot;]" />
               </If.Then>
@@ -199,14 +200,14 @@
         </DoWhile>
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID4">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">310,246.04</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:Point x:Key="ShapeLocation">0,147</av:Point>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Leer archivos" sap:VirtualizedContainerService.HintSize="357,541" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Leer archivos" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="folder_select" />
           <Variable x:TypeArguments="s:String[]" Name="file_list" />
@@ -216,8 +217,8 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:SelectFolder DisplayName="Seleccionar carpeta" sap:VirtualizedContainerService.HintSize="315,22" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[folder_select]" />
-        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="315,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <ui:SelectFolder DisplayName="Seleccionar carpeta" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[folder_select]" />
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="s:String[]">[file_list]</OutArgument>
           </Assign.To>
@@ -225,23 +226,238 @@
             <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(folder_select)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="315,287" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_list]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="314,289" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_list]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="272,154" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[item.ToString]" />
+                <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[item.ToString]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
+      </Sequence>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">0,224.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart DisplayName="Game number" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+        <Flowchart.Variables>
+          <Variable x:TypeArguments="x:Int32" Name="ramdom" />
+          <Variable x:TypeArguments="x:Int32" Name="entrada" />
+        </Flowchart.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">418,0</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">448,75 448,125</av:PointCollection>
+            <x:Double x:Key="Height">663</x:Double>
+            <x:Double x:Key="Width">834</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Flowchart.StartNode>
+          <x:Reference>__ReferenceID10</x:Reference>
+        </Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">317,125</av:Point>
+              <av:Size x:Key="ShapeSize">262,60</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">448,185 448,235</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[ramdom]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[new Random().Next(0,10)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">348,235</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">448,287 448,337</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InputDialog Options="{x:Null}" DisplayName="Cuadro de diálogo de entrada" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Ingrese un nro entre el 0 - 10" Title="Alerta">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:Int32">[entrada]</OutArgument>
+                </ui:InputDialog.Result>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InputDialog>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID5" Condition="[ramdom = entrada]" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">401,337</av:Point>
+                      <av:Size x:Key="ShapeSize">94,87</av:Size>
+                      <av:PointCollection x:Key="TrueConnector">401,380.5 371,380.5 371,390 240,390</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">495,380.5 660,380.5 660,386.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">40,364</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Adivinaste&quot;]" />
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowDecision x:Name="__ReferenceID7" Condition="[ramdom &lt; entrada]" DisplayName="Decisión de flujo" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">613,386.5</av:Point>
+                          <av:Size x:Key="ShapeSize">94,87</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">613,430 583,430 583,540 450,540</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">707,430 730,430 730,504.02 700,504.02 700,534.02</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">250,514</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">350,514 350,484 578,484 578,261 548,261</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;menos &quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MessageBox>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID4</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">600,534.02</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">800,560.02 830,560.02 830,261 548,261</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;mas&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MessageBox>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID4</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
+        <x:Reference>__ReferenceID6</x:Reference>
+        <x:Reference>__ReferenceID7</x:Reference>
+        <x:Reference>__ReferenceID8</x:Reference>
+        <x:Reference>__ReferenceID9</x:Reference>
+      </Flowchart>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID11">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">220,147</av:Point>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Game number Secuencia" sap:VirtualizedContainerService.HintSize="699,889" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Int32" Name="r" />
+          <Variable x:TypeArguments="x:String" Default="Ingrese un numero del 0-10" Name="mensaje" />
+          <Variable x:TypeArguments="x:Int32" Name="res" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="657,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[r]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[new Random().Next(0,10)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <DoWhile DisplayName="Hacer mientras" sap:VirtualizedContainerService.HintSize="657,598" sap2010:WorkflowViewState.IdRef="DoWhile_2" Condition="[r &lt;&gt; res]">
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="611,434" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Cuadro de diálogo de entrada" sap:VirtualizedContainerService.HintSize="569,92" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="[mensaje]" Title="entrada">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:Int32">[res]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <If Condition="[r &lt; res]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="569,210" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[mensaje]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">menos</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+              <If.Else>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[mensaje]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">mas</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
+          </Sequence>
+        </DoWhile>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Bandeja de mensajes" sap:VirtualizedContainerService.HintSize="657,59" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;Adivinaste&quot;]" />
       </Sequence>
     </FlowStep>
   </Flowchart>
