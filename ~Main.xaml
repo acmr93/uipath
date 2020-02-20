@@ -59,7 +59,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,32.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,107.5 300,157.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,107.5 300,137.5 240,137.5 240,47.5 130,47.5 130,66</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -68,7 +68,7 @@
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,157.5</av:Point>
+          <av:Point x:Key="ShapeLocation">30,66</av:Point>
           <av:Size x:Key="ShapeSize">200,68</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

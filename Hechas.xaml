@@ -443,7 +443,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[str_text]">
@@ -516,7 +516,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:WindowScope>
@@ -589,7 +589,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:WindowScope>
@@ -626,7 +626,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:WindowScope>
@@ -663,7 +663,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:WindowScope>
@@ -2014,7 +2014,7 @@
           <av:Size x:Key="ShapeSize">200,68</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="L4 Grab error combo box" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_38">
+      <Sequence DisplayName="L4 Grab error combo box" sap:VirtualizedContainerService.HintSize="401,1353" sap2010:WorkflowViewState.IdRef="Sequence_38">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2444,6 +2444,52 @@
         </ui:BrowserScope>
         <ui:OutputDataTable DataTable="[ExtraerTablaDeDatos]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[tabla]" />
         <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="434,93" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[tabla]" />
+      </Sequence>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">630,0</av:Point>
+          <av:Size x:Key="ShapeSize">200,128</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence sap2010:Annotation.AnnotationText="Extraccion de datos con amazon&#xA;" DisplayName="Extracción de datos - leccion-5-esquema-de-la-practica-1" sap:VirtualizedContainerService.HintSize="200,128" sap2010:WorkflowViewState.IdRef="Sequence_50">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dt_ExtraerTablaDeDatos" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'LaptopeBay Page'" sap:VirtualizedContainerService.HintSize="434,673" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="f773af3e4f1b7c4bd57581a670e2661f" Selector="&lt;html app='chrome.exe' title='laptop | eBay' /&gt;">
+          <ui:BrowserScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,527" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[dt_ExtraerTablaDeDatos]" DisplayName="Extraer datos estructurados 'UL'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='s-item   '/&gt;&lt;webctrl tag='div' class='s-item__wrapper clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__info clearfix' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Name' attr='text' name2='URL' attr2='href'&gt;&lt;webctrl tag='li' class='s-item   '/&gt;&lt;webctrl tag='div' class='s-item__wrapper clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__info clearfix' idx='1'/&gt;&lt;webctrl tag='a' class='s-item__link' idx='1'/&gt;&lt;webctrl tag='h3'/&gt;&lt;/column&gt;&lt;column exact='1' name='Precio' attr='text'&gt;&lt;webctrl tag='li' class='s-item   '/&gt;&lt;webctrl tag='div' class='s-item__wrapper clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__info clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__details clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__detail s-item__detail--primary' idx='1'/&gt;&lt;webctrl tag='span' class='s-item__price' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Ubicacion' attr='text'&gt;&lt;webctrl tag='li' class='s-item   '/&gt;&lt;webctrl tag='div' class='s-item__wrapper clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__info clearfix' idx='1'/&gt;&lt;webctrl tag='div' class='s-item__details clearfix' idx='1'/&gt;&lt;webctrl tag='span' class='s-item__detail s-item__detail--secondary' idx='2'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_5" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl idx='4' parentid='srp-river-results-SEARCH_PAGINATION_MODEL_V2' tag='svg' /&gt;" SimulateClick="True">
+                  <ui:ExtractData.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a58cda4998956fd76cd65ed102de6a59" Selector="&lt;webctrl parentid='srp-river-results' tag='UL' /&gt;" WaitForReady="COMPLETE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:ExtractData.Target>
+                </ui:ExtractData>
+                <ui:WriteRange AddHeaders="True" DataTable="[dt_ExtraerTablaDeDatos]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\amontilla\Downloads\Untitled.xlsx" />
+                <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[dt_ExtraerTablaDeDatos]" Delimitator="Semicolon" DisplayName="Anexar a CSV" FilePath="C:\Users\amontilla\Downloads\Untitled.csv" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendCsvFile_3" />
+              </Sequence>
+            </ActivityAction>
+          </ui:BrowserScope.Body>
+        </ui:BrowserScope>
       </Sequence>
     </FlowStep>
   </Flowchart>
