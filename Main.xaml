@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,696" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -25,10 +25,11 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -46,6 +47,8 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -69,125 +72,69 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,157.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Citrix nativo" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_93">
+      <Sequence DisplayName="Citrix nativo" sap:VirtualizedContainerService.HintSize="494,1563" sap2010:WorkflowViewState.IdRef="Sequence_112">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ui:GenericValue" Name="Qtqwindowicon" />
+          <Variable x:TypeArguments="ui:GenericValue" Name="Qtqwindowicon1" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'W7Corrien Qt5qwindo'" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="745ec2303e2cc19af6593689a57d5337" Selector="&lt;wnd app='virtualboxvm.exe' cls='Qt5QWindowIcon' title='w7 [Corriendo] - Oracle VM VirtualBox' /&gt;">
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'W7Corrien Qt5qwindo'" sap:VirtualizedContainerService.HintSize="452,1338" sap2010:WorkflowViewState.IdRef="WindowScope_9" InformativeScreenshot="d0bce4e3a5b73db612de62042f4078bc" Selector="&lt;wnd app='virtualboxvm.exe' cls='Qt5QWindowIcon' title='w7 [Corriendo] - Oracle VM VirtualBox' /&gt;">
           <ui:WindowScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_92">
-                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickImage_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-                  <ui:ClickImage.CursorPosition>
-                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
-                  </ui:ClickImage.CursorPosition>
-                  <ui:ClickImage.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAATCAYAAADPsWC5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVFhH7ZTdrcMgDEbZjWnywDJMkCHYJCNkATagGPCNoR8kD02vooJ01PJjyz6FKu99+HWmhMiUEJkSIqcS1nWtQGeeTlcCN70sS8U1GS4YpYKq0MFu6OwHcCYobcOG9i4AJcjm2yHXUWyGJJjg4N4N3CmhN/Z9T58oNvNwCWcCeIxFjCVsVh/PhIunRow5npFx4lzJRWd4n5CxQgLMP+BGCaJYIjaV9lKz5XuECtZ2Kw2yuByf1uPcGRWM49wHf+tSQi9/mSO+fhOo8EoOC6qKr+NlI218K6Gbv+RC/IsE+MtckJCuuWgI3YRu/gHf/2OkgpsGr94EeSO834LVneeA8pc5oiuBGuVm5ZDrKDYzkBBJhfFVhW8ZS8jr4ppH3iSU82/5B0AJBA9uWjZPA8U8la4Eph3ozNM5lfALTAmRKcH78AKSLj5VXwFI7gAAAABJRU5ErkJggg==" />
-                  </ui:ClickImage.Image>
-                  <ui:ClickImage.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:ClickImage.Target>
-                </ui:ClickImage>
-                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-                  <ui:ClickImage.CursorPosition>
-                    <ui:CursorPosition OffsetX="76" OffsetY="11" Position="TopRight" />
-                  </ui:ClickImage.CursorPosition>
-                  <ui:ClickImage.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAAQCAYAAACRKbYdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVEhL7ZLrDcMwCITZjXlYhlnYhEW8wdWvxA9VrdWqTSLlx0mWMfDBmUIIOJtuqFVdAcogRKBBDPUYMwGxwof3v9ETKIENd1/IFfzBIBeH6u3LZwYne8VqXrNcLOU4lOtdzlsf+P2fyk1jbIbqGrhGQPXyrt/O/zfVNcuQZYiypapDoXZtltUaR0KZULOvr3HsplJe+4cj4La5F7UnTVDn0A21poAHzzMyWY7OqEkAAAAASUVORK5CYII=" />
-                  </ui:ClickImage.Image>
-                  <ui:ClickImage.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:ClickImage.Target>
-                </ui:ClickImage>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'Qt5QWindowIcon'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="angela">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7e5cedcd50cdfeae34bd0db10f3bd5b5" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='UIMachineViewNormalClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='qt_scrollarea_viewportWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickImage_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-                  <ui:ClickImage.CursorPosition>
-                    <ui:CursorPosition OffsetX="69" OffsetY="12" Position="TopRight" />
-                  </ui:ClickImage.CursorPosition>
-                  <ui:ClickImage.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAQCAYAAACP4IauAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACnSURBVEhL7ZPbDcMwCEXZjXlYhlnYhEW8ARXyA6zkK63rpsrH/cgNlo4PCZRS7C55YFfl7rBiBGRy6PdnHayyIbLp2buL+VNYIQOAyADx+ehJvFNjzHOfEXDZrFAFU0ZD1tpnm7s/AwccZrvFZLxabdkJ6waBZDx3szHTV9/O7oYd625gDuvQ0aez34Od1x0/ydxXs3M/g3vn8OkSb+QE9nfzwK5JsRfZX6ZbALA6VwAAAABJRU5ErkJggg==" />
-                  </ui:ClickImage.Image>
-                  <ui:ClickImage.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:ClickImage.Target>
-                </ui:ClickImage>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'Qt5QWindowIcon'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="montilla">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a6d6276fe452808fdd909bb6baafa51b" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='UIMachineViewNormalClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='qt_scrollarea_viewportWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:ClickOCRText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en texto OCR 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickOCRText_3" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" SendWindowMessages="False" Text="Add Line1">
-                  <ui:ClickOCRText.CursorPosition>
-                    <ui:CursorPosition OffsetX="-94" OffsetY="-123" Position="Center" />
-                  </ui:ClickOCRText.CursorPosition>
-                  <ui:ClickOCRText.OCREngine>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1192" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Buscar imagen relativa" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Buscar imagen 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_4">
+                    <ui:WaitImageAppear.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAAgCAYAAAAYPvbkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHHSURBVGhD7ZbREYMgDIadinnYhmHYhVncgBYoEmJA1HI1vTx8d5qQkPgDsqzr6gVeiGgMEdEYIqIxRERjiIjGEBGNISIaQ0Q0hohoDBHRGHJDNOv1sviFRHnjqJg7hPmovI06lPGuGvdLWrVf40s77WpRZ+J6ou3tzqhJi+cu9wX8W9ECUThtd/bfwkI0542iji1o/8Q641Ue90HbnOe8aCmf9nazoVoqQVMercMOzWNgLBGPj2CrQSxVO9EzjB9kumhWvwsEH6d+h3HhGTb6Jn6E/OFac7Tnxr4wtzJu89c7Mc0PhYh+8N7tBS+QZu29eseYLBphr5o7aGBobC8H9F2p5Wx8vSgKB3lOMlc0vPoivQbQ8RO5IRqcPz7j3IFWLch22Et+L7mLgHAcNc85HrTTwjM6HptjIS07dfzR49p+aCP8pJDQR8Ue1XHMw/5pdY50bb8mWoqt7biW/X+nPt7i+NF/WsgFLybdxUn1Mc500fo3ruKLOwzdvpTWgzutxGxU82Tw8Qt3ScqvmrUS8cifFkrx0zdf1DOIH+VLov0DvYX3LES0DRGNISKaMBERjSEiGkNENIaIaAwR0RgiojFERGPH6l8xg4uScIB+QgAAAABJRU5ErkJggg==" />
+                    </ui:WaitImageAppear.Image>
+                    <ui:WaitImageAppear.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:WaitImageAppear.Target>
+                  </ui:WaitImageAppear>
+                  <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="TRANSLATE" DisplayName="Traducir zona de recorte" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_7">
+                    <ui:SetClippingRegion.Size>
+                      <ui:Region Rectangle="-130, -6, 306, 13" />
+                    </ui:SetClippingRegion.Size>
+                  </ui:SetClippingRegion>
+                </Sequence>
+                <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Obtener texto OCR 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="GetOCRText_2">
+                  <ui:GetOCRText.OCREngine>
                     <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
                       <ActivityFunc.Argument>
                         <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                       </ActivityFunc.Argument>
-                      <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap2010:WorkflowViewState.IdRef="GoogleOCR_3" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2">
-                        <ui:GoogleOCR.AllowedCharacters>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:GoogleOCR.AllowedCharacters>
-                        <ui:GoogleOCR.DeniedCharacters>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:GoogleOCR.DeniedCharacters>
-                      </ui:GoogleOCR>
+                      <ui:MicrosoftOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Language="Español (España)" Profile="Screen" Scale="1" />
                     </ActivityFunc>
-                  </ui:ClickOCRText.OCREngine>
-                  <ui:ClickOCRText.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="959bb4e5a2442efc48b088fcd1699558" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='UIMachineViewNormalClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='qt_scrollarea_viewportWindow' /&gt;">
+                  </ui:GetOCRText.OCREngine>
+                  <ui:GetOCRText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="157a464b9019e402b6c6fae964bfea27">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -195,63 +142,54 @@
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
                     </ui:Target>
-                  </ui:ClickOCRText.Target>
-                </ui:ClickOCRText>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'Qt5QWindowIcon'" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="parana 439">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2967a0d8c72cbe6684e2de6b0478b32c" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='UIMachineViewNormalClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='qt_scrollarea_viewportWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickImage_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-                  <ui:ClickImage.CursorPosition>
-                    <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
-                  </ui:ClickImage.CursorPosition>
-                  <ui:ClickImage.Image>
-                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAANCAYAAAAnigciAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADHSURBVDhPzZTbEcQgCEWtynroxmLoxVrsgBVGEmB1JslkN/m4HzyUA5Kk1ho9rZdCIFBKaShTqSHOqoVyLlSj/6I8hAAAodpcTEFs4d9BVCp50jmDAf4JQro2U3D+3IuOJ+LiA6KAPlsiQJuvfjtFIJA7vmt4iGl3SMAHbXwUcoUlFqapfslf7FfXwUlMICyw2pK7T2ebBob8oHt2wkEsGjkG0XX169hsbiTuR5jiRB6CtfxP8G6wb3KpszXPnD8N8YBeANHoA8OjmGIQnPOoAAAAAElFTkSuQmCC" />
-                  </ui:ClickImage.Image>
-                  <ui:ClickImage.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:ClickImage.Target>
-                </ui:ClickImage>
-                <ui:ClickOCRText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en texto OCR 'Qt5QWindowIcon'" sap2010:WorkflowViewState.IdRef="ClickOCRText_4" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" SendWindowMessages="False" Text="Save">
-                  <ui:ClickOCRText.CursorPosition>
-                    <ui:CursorPosition OffsetX="-58" OffsetY="23" Position="Center" />
-                  </ui:ClickOCRText.CursorPosition>
-                  <ui:ClickOCRText.OCREngine>
+                  </ui:GetOCRText.Target>
+                  <ui:GetOCRText.Text>
+                    <OutArgument x:TypeArguments="ui:GenericValue">[Qtqwindowicon]</OutArgument>
+                  </ui:GetOCRText.Text>
+                </ui:GetOCRText>
+                <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="RECTANGLE" DisplayName="Restablecer zona de recorte" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_8">
+                  <ui:SetClippingRegion.Size>
+                    <ui:Region Rectangle="0, 0, 0, 0" />
+                  </ui:SetClippingRegion.Size>
+                </ui:SetClippingRegion>
+                <Sequence DisplayName="Buscar imagen relativa" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Buscar imagen 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_5">
+                    <ui:WaitImageAppear.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGUAAAAbCAYAAABlVEF+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHFSURBVGhD7ZbbEYQgDEWtinrohmLoxVrsgDUCEkJg2QdOPvJxZuQVLlwIbsdxBEUWaopA1BSBqCkCUVMEoqYIRE0RiJoiEDVFIB+a4oPdtrCxmOB2box0YE1rtO/OhM3683sPzmzBer4f5Yebsm4x63lGu7fZCJjPBs/04VBT2PZ/ALcjzbG7YIwLO9uvZYEpsd7a8+rm0wGiSLorVznFcfZuM24v8Xypr8edDOMCEJu2xVQS60A/XQduP6k2843WDNF8A7EuzeNbs8gULDaWq826RGdhsT3m3rOMRdMFMOP6cdPmVnGzXqwdf8eUc49pygOtFNCS+sHbwprXYdlNaesR1WJof1yOmzC9oGFcDJ2D+05Ma63BRpS3ZY6HTCEp4WJ2oVAu42qDBnFHp7iaA32zYzp9m7YMpykya8wDpkCZCPry9MVxue3TuBjc1vtOfKUVjMExe4eD5yFT6n7X//vMQiEv44f2zabXcVe9KXjOVkOpTzrQ2zLLM+nreoDLNTbWTp++uNFlbPuw9+ICdSopY0u99XR+kn64v6+O1ht0mJpHvjpYPD+YoqxCTRGImiIQNUUgaopA1BSBqCkCUVPEcYQX0NdMHEv0yh8AAAAASUVORK5CYII=" />
+                    </ui:WaitImageAppear.Image>
+                    <ui:WaitImageAppear.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:WaitImageAppear.Target>
+                  </ui:WaitImageAppear>
+                  <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="TRANSLATE" DisplayName="Traducir zona de recorte" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_9">
+                    <ui:SetClippingRegion.Size>
+                      <ui:Region Rectangle="-101, 1, 158, 0" />
+                    </ui:SetClippingRegion.Size>
+                  </ui:SetClippingRegion>
+                </Sequence>
+                <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Obtener texto OCR 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="GetOCRText_3">
+                  <ui:GetOCRText.OCREngine>
                     <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
                       <ActivityFunc.Argument>
                         <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                       </ActivityFunc.Argument>
-                      <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap2010:WorkflowViewState.IdRef="GoogleOCR_4" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2">
-                        <ui:GoogleOCR.AllowedCharacters>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:GoogleOCR.AllowedCharacters>
-                        <ui:GoogleOCR.DeniedCharacters>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:GoogleOCR.DeniedCharacters>
-                      </ui:GoogleOCR>
+                      <ui:MicrosoftOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_2" Image="[Image]" Language="Español (España)" Profile="Screen" Scale="1" />
                     </ActivityFunc>
-                  </ui:ClickOCRText.OCREngine>
-                  <ui:ClickOCRText.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="697c5748294cf21b449f906d4e7d8996" Selector="&lt;wnd cls='Qt5QWindowIcon' title='QWidgetClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='UIMachineViewNormalClassWindow' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='qt_scrollarea_viewportWindow' /&gt;">
+                  </ui:GetOCRText.OCREngine>
+                  <ui:GetOCRText.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="8b78c38f3b5edba0798ad1b81e8b76fe">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -259,12 +197,21 @@
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
                     </ui:Target>
-                  </ui:ClickOCRText.Target>
-                </ui:ClickOCRText>
+                  </ui:GetOCRText.Target>
+                  <ui:GetOCRText.Text>
+                    <OutArgument x:TypeArguments="ui:GenericValue">[Qtqwindowicon1]</OutArgument>
+                  </ui:GetOCRText.Text>
+                </ui:GetOCRText>
+                <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="RECTANGLE" DisplayName="Restablecer zona de recorte" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_10">
+                  <ui:SetClippingRegion.Size>
+                    <ui:Region Rectangle="0, 0, 0, 0" />
+                  </ui:SetClippingRegion.Size>
+                </ui:SetClippingRegion>
               </Sequence>
             </ActivityAction>
           </ui:WindowScope.Body>
         </ui:WindowScope>
+        <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="452,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[Qtqwindowicon]" />
       </Sequence>
     </FlowStep>
   </Flowchart>
