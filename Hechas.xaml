@@ -22,6 +22,7 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -42,6 +43,7 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Hechas" sap:VirtualizedContainerService.HintSize="2064,820" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -4769,7 +4771,7 @@ Select dc.ColumnName).ToArray()]</InArgument>
           <av:Size x:Key="ShapeSize">200,128</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="leccion-10-pdf-part-1-extraer-datos-de-pdf&#xA;" DisplayName="Lee con OCR" sap:VirtualizedContainerService.HintSize="200,128" sap2010:WorkflowViewState.IdRef="Sequence_98">
+      <Sequence sap2010:Annotation.AnnotationText="leccion-10-pdf-part-1-extraer-datos-de-pdf&#xA;" DisplayName="Lee con OCR" sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_98">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="str_extractext" />
         </Sequence.Variables>
@@ -4790,7 +4792,7 @@ Select dc.ColumnName).ToArray()]</InArgument>
             </ActivityFunc>
           </ui:ReadPDFWithOCR.OCREngine>
         </ui:ReadPDFWithOCR>
-        <ui:WriteTextFile DisplayName="Escribir archivo de texto" FileName="Archivos para practicas\Text_extrac2.txt" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[str_extractext]" />
+        <ui:WriteTextFile DisplayName="Escribir archivo de texto" FileName="Archivos para practicas\Text_extrac2.txt" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[str_extractext]" />
       </Sequence>
     </FlowStep>
     <FlowStep>
@@ -5053,6 +5055,47 @@ Select dc.ColumnName).ToArray()]</InArgument>
             </ActivityAction>
           </ui:ForEach.Body>
         </ui:ForEach>
+      </Sequence>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">1820,156</av:Point>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="leccion-11-flujos-de-trabajo Email attach" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_106">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="template" />
+          <Variable x:TypeArguments="ui:Image" Name="capture" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ReadTextFile Content="[template]" DisplayName="Read Text File" FileName="Archivos para practicas\emailTemplate.txt" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+        <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[capture]">
+          <ui:TakeScreenshot.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TakeScreenshot.Target>
+        </ui:TakeScreenshot>
+        <ui:SaveImage DisplayName="Save Image" FileName="Archivos para practicas\Untitled.png" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[capture]" />
+        <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(template, Now)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="Hola cocacola" To="montilla.angela93@gmail.com">
+          <ui:SendOutlookMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+              <InArgument x:TypeArguments="x:String">Archivos para practicas\Untitled.png</InArgument>
+            </scg:List>
+          </ui:SendOutlookMail.Files>
+        </ui:SendOutlookMail>
       </Sequence>
     </FlowStep>
   </Flowchart>
